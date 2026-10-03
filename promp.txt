@@ -1,0 +1,6 @@
+actua como un disenador grafico ,
+ necesito que cambies los colores que te bases en un a paleta de colores por triada siendo base rojo y negro,
+  no cambies mi codigo solo en caso que sea necesario y me expliques ,
+   no toques los id , 
+   no uses librerias externas como bootstraps 
+   y lo principal que hagas un sistema responsive 

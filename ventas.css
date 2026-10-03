@@ -1,35 +1,332 @@
+
+/* =====================================
+   CALCULADORA DE COMISIONES
+   PALETA TRIADICA: ROJO - AZUL - AMARILLO
+   ===================================== */
+
+:root {
+    --rojo: #DC2626;
+    --rojo-hover: #B91C1C;
+    --negro: #08090D;
+    --superficie: #18181F;
+    --azul: #2563EB;
+    --amarillo: #FACC15;
+    --texto: #F5F5F5;
+    --texto-secundario: #A1A1AA;
+    --borde: #35353F;
+}
+
+/* RESET */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* FONDO GENERAL */
+
 body {
-    font-family: Arial;
-    background-color: #0f172a;
-    color: white;
+    font-family: Arial, sans-serif;
+    background:
+        radial-gradient(
+            circle at 10% 15%,
+            rgba(220, 38, 38, 0.16),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 90% 85%,
+            rgba(37, 99, 235, 0.13),
+            transparent 35%
+        ),
+        var(--negro);
+
+    color: var(--texto);
+
+    min-height: 100vh;
+    min-height: 100svh;
+
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+
+    padding: 30px 16px;
 }
+
+/* CONTENEDOR PRINCIPAL */
 
 .contenedor {
-    background-color: #1e293b;
-    padding: 20px;
-    border-radius: 10px;
-    width: 300px;
+    background: var(--superficie);
+
+    width: 100%;
+    max-width: 440px;
+
+    padding: clamp(22px, 5vw, 35px);
+
+    border-radius: 18px;
+
+    border: 1px solid var(--borde);
+
+    border-top: 4px solid var(--rojo);
+
+    box-shadow:
+        0 15px 45px rgba(0, 0, 0, 0.5),
+        0 0 25px rgba(220, 38, 38, 0.08);
+
 }
 
-input {
-    width: 100%;
-    margin-bottom: 10px;
-    padding: 5px;
+/* TITULOS */
+
+h1 {
+    font-size: clamp(23px, 5vw, 30px);
+
+    text-align: center;
+
+    color: var(--texto);
+
+    margin-bottom: 30px;
+
+    line-height: 1.2;
 }
+
+h1::after {
+    content: "";
+
+    display: block;
+
+    width: 65px;
+    height: 4px;
+
+    background: var(--rojo);
+
+    margin: 15px auto 0;
+
+    border-radius: 10px;
+}
+
+h2 {
+    font-size: 20px;
+
+    color: var(--amarillo);
+
+    margin-top: 28px;
+    margin-bottom: 15px;
+
+    border-bottom: 1px solid var(--borde);
+
+    padding-bottom: 10px;
+}
+
+/* ETIQUETAS */
+
+label {
+    display: block;
+
+    margin-bottom: 8px;
+    margin-top: 16px;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    color: var(--texto-secundario);
+}
+
+/* CAMPOS DE ENTRADA */
+
+input {
+    display: block;
+
+    width: 100%;
+
+    padding: 13px 14px;
+
+    margin-bottom: 12px;
+
+    background: var(--negro);
+
+    color: var(--texto);
+
+    border: 1px solid var(--borde);
+
+    border-radius: 8px;
+
+    font-size: 16px;
+
+    outline: none;
+
+    transition: border 0.3s, box-shadow 0.3s;
+}
+
+input:focus {
+    border-color: var(--azul);
+
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+/* BOTON */
 
 button {
     width: 100%;
-    padding: 10px;
-    background-color: #22c55e;
+
+    padding: 14px;
+
+    margin-top: 12px;
+
+    background: var(--rojo);
+
     border: none;
+
+    border-radius: 8px;
+
     color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
     cursor: pointer;
+
+    transition:
+        background 0.3s,
+        transform 0.2s,
+        box-shadow 0.3s;
 }
 
 button:hover {
-    background-color: #16a34a;
+    background: var(--rojo-hover);
+
+    box-shadow: 0 5px 20px rgba(220, 38, 38, 0.3);
+
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+button:focus-visible {
+    outline: 3px solid var(--amarillo);
+    outline-offset: 3px;
+}
+
+/* RESULTADOS */
+
+p {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 12px;
+
+    padding: 12px;
+
+    margin-bottom: 9px;
+
+    background: var(--negro);
+
+    border-radius: 7px;
+
+    border-left: 3px solid var(--azul);
+
+    color: var(--texto-secundario);
+
+    font-size: 14px;
+
+    flex-wrap: wrap;
+}
+
+p span {
+    color: var(--texto);
+
+    font-weight: bold;
+
+    overflow-wrap: anywhere;
+}
+
+/* TOTAL */
+
+p:last-child {
+    border-left-color: var(--amarillo);
+
+    background: rgba(250, 204, 21, 0.08);
+
+    color: var(--amarillo);
+
+    font-weight: bold;
+}
+
+p:last-child span {
+    color: var(--amarillo);
+}
+
+/* =====================================
+   RESPONSIVE DESIGN
+   ===================================== */
+
+/* TABLETS */
+
+@media (max-width: 768px) {
+
+    body {
+        padding: 25px 16px;
+    }
+
+    .contenedor {
+        max-width: 420px;
+    }
+
+}
+
+/* TELEFONOS */
+
+@media (max-width: 480px) {
+
+    body {
+        padding: 18px 12px;
+        align-items: flex-start;
+    }
+
+    .contenedor {
+        padding: 22px 18px;
+
+        border-radius: 13px;
+    }
+
+    h1 {
+        font-size: 24px;
+        margin-bottom: 25px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    input {
+        padding: 12px;
+        font-size: 16px;
+    }
+
+    button {
+        padding: 13px;
+    }
+
+    p {
+        font-size: 13px;
+    }
+
+}
+
+/* TELEFONOS PEQUEÑOS */
+
+@media (max-width: 320px) {
+
+    .contenedor {
+        padding: 18px 13px;
+    }
+
+    h1 {
+        font-size: 21px;
+    }
+
 }
