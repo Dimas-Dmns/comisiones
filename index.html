@@ -1,49 +1,124 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Calculadora de Comisiones</title>
+
     <link rel="stylesheet" href="ventas.css">
+
     <script src="utilitario.js" defer></script>
     <script src="ventas.js" defer></script>
+
 </head>
+
 <body>
 
     <div class="contenedor">
+
         <h1>Calculadora de Comisiones</h1>
 
-       <label>Salario Base:</label>
 
-<input type="text" id="txtSueldoBase"
-       onblur="validarInput('txtSueldoBase', 'errorSueldoBase')">
+        <!-- SALARIO BASE -->
 
-<span id="errorSueldoBase" class="mensaje-error"></span>
+        <label for="txtSueldoBase">
+            Salario Base ($):
+        </label>
+
+        <input
+            type="text"
+            id="txtSueldoBase"
+            placeholder="Ej: 500.00"
+        >
+
+        <span
+            id="errorSueldoBase"
+            class="mensaje-error"
+        ></span>
 
 
-<label>Número de ventas:</label>
+        <!-- NÚMERO DE VENTAS -->
 
-<input type="text" id="txtVentas"
-       onblur="validarInput('txtVentas', 'errorVentas')">
+        <label for="txtVentas">
+            Número de ventas:
+        </label>
 
-<span id="errorVentas" class="mensaje-error"></span>
+        <input
+            type="text"
+            id="txtVentas"
+            placeholder="Ej: 10"
+        >
+
+        <span
+            id="errorVentas"
+            class="mensaje-error"
+        ></span>
 
 
-<label>Precio del producto:</label>
+        <!-- PRECIO DEL PRODUCTO -->
 
-<input type="text" id="txtPrecio"
-       onblur="validarInput('txtPrecio', 'errorPrecio')">
+        <label for="txtPrecio">
+            Precio del producto ($):
+        </label>
 
-<span id="errorPrecio" class="mensaje-error"></span>
+        <input
+            type="text"
+            id="txtPrecio"
+            placeholder="Ej: 25.50"
+        >
 
-        <button onclick="calcular()">Calcular Comisión</button>
+        <span
+            id="errorPrecio"
+            class="mensaje-error"
+        ></span>
+
+
+        <!-- BOTÓN CALCULAR -->
+
+        <button
+            type="button"
+            onclick="calcular()"
+        >
+            Calcular Simulador
+        </button>
+
+
+        <!-- BOTÓN LIMPIAR -->
+
+        <button
+            type="button"
+            onclick="limpiar()"
+        >
+            Limpiar datos
+        </button>
+
+
+        <!-- RESULTADOS -->
 
         <h2>Resultados</h2>
-        <p>Salario Base: <span id="spSueldoBase"></span></p>
-        <p>Comisión: <span id="spComision"></span></p>
-        <p>Total: <span id="spTotal"></span></p>
+
+        <p>
+            Salario Base:
+            $<span id="spSueldoBase"></span>
+        </p>
+
+        <p>
+            Comisión:
+            $<span id="spComision"></span>
+        </p>
+
+        <p>
+            Total:
+            $<span id="spTotal"></span>
+        </p>
+
     </div>
 
-    
 </body>
+
 </html>
+

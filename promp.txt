@@ -1,9 +1,21 @@
-actua como un disenador grafico ,
+1.actua como un disenador grafico ,
  necesito que cambies los colores que te bases en un a paleta de colores por triada siendo base rojo y negro,
   no cambies mi codigo solo en caso que sea necesario y me expliques ,
    no toques los id , 
    no uses librerias externas como bootstraps 
    y lo principal que hagas un sistema responsive 
 
-
+2.actua como un desarrollador de software
+ agrega todas las validaciones necesarias como tipos de datos, montos máximos y mínimos, campos obligatorios.
+esas validaciones se ejecutarán una vez que presione el botón Calcular Simulador y aparecerán los errores debajo de cada campo validado adicional 
+agregamos un boton adicional para limpiar los datos
+Conservamos los tres IDs originales.
+Agregamos un span para cada mensaje de error.
+Eliminamos onblur.
+comprueba:
+Que ningún campo esté vacío.
+Que no se ingresen letras.
+Que no se ingresen números negativos.
+Que no se ingresen símbolos como $ o comas.
+Que los montos no superen los límites establecidos.
 

@@ -1,340 +1,173 @@
 
-/* =====================================
-   CALCULADORA DE COMISIONES
-   PALETA TRIADICA: ROJO - AZUL - AMARILLO
-   ===================================== */
-
-:root {
-    --rojo: #DC2626;
-    --rojo-hover: #B91C1C;
-    --negro: #08090D;
-    --superficie: #18181F;
-    --azul: #2563EB;
-    --amarillo: #FACC15;
-    --texto: #F5F5F5;
-    --texto-secundario: #A1A1AA;
-    --borde: #35353F;
-}
-
-/* RESET */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* FONDO GENERAL */
+/* =================================
+   ESTILOS GENERALES
+================================= */
 
 body {
-    font-family: Arial, sans-serif;
-    background:
-        radial-gradient(
-            circle at 10% 15%,
-            rgba(220, 38, 38, 0.16),
-            transparent 35%
-        ),
-        radial-gradient(
-            circle at 90% 85%,
-            rgba(37, 99, 235, 0.13),
-            transparent 35%
-        ),
-        var(--negro);
-
-    color: var(--texto);
-
+    margin: 0;
+    padding: 30px 15px;
     min-height: 100vh;
-    min-height: 100svh;
+    box-sizing: border-box;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    padding: 30px 16px;
+    font-family: Arial, sans-serif;
+    background-color: #f1f5f9;
+    color: #1e293b;
 }
 
-/* CONTENEDOR PRINCIPAL */
+
+/* =================================
+   CONTENEDOR PRINCIPAL
+================================= */
 
 .contenedor {
-    background: var(--superficie);
-
     width: 100%;
-    max-width: 440px;
+    max-width: 450px;
+    margin: 30px auto;
+    padding: 30px;
 
-    padding: clamp(22px, 5vw, 35px);
+    box-sizing: border-box;
+    background-color: #ffffff;
+    border-radius: 12px;
 
-    border-radius: 18px;
-
-    border: 1px solid var(--borde);
-
-    border-top: 4px solid var(--rojo);
-
-    box-shadow:
-        0 15px 45px rgba(0, 0, 0, 0.5),
-        0 0 25px rgba(220, 38, 38, 0.08);
-
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.10);
 }
 
-/* TITULOS */
+
+/* =================================
+   TITULOS
+================================= */
 
 h1 {
-    font-size: clamp(23px, 5vw, 30px);
-
     text-align: center;
-
-    color: var(--texto);
-
+    color: #1e3a8a;
     margin-bottom: 30px;
-
-    line-height: 1.2;
-}
-
-h1::after {
-    content: "";
-
-    display: block;
-
-    width: 65px;
-    height: 4px;
-
-    background: var(--rojo);
-
-    margin: 15px auto 0;
-
-    border-radius: 10px;
 }
 
 h2 {
-    font-size: 20px;
-
-    color: var(--amarillo);
-
-    margin-top: 28px;
-    margin-bottom: 15px;
-
-    border-bottom: 1px solid var(--borde);
-
+    margin-top: 30px;
+    color: #1e3a8a;
+    border-bottom: 2px solid #e2e8f0;
     padding-bottom: 10px;
 }
 
-/* ETIQUETAS */
+
+/* =================================
+   ETIQUETAS E INPUTS
+================================= */
 
 label {
     display: block;
-
     margin-bottom: 8px;
-    margin-top: 16px;
-
-    font-size: 14px;
-
     font-weight: bold;
-
-    color: var(--texto-secundario);
 }
 
-/* CAMPOS DE ENTRADA */
-
 input {
-    display: block;
-
     width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
 
-    padding: 13px 14px;
+    box-sizing: border-box;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
 
-    margin-bottom: 12px;
-
-    background: var(--negro);
-
-    color: var(--texto);
-
-    border: 1px solid var(--borde);
-
-    border-radius: 8px;
-
-    font-size: 16px;
-
+    font-size: 15px;
     outline: none;
-
-    transition: border 0.3s, box-shadow 0.3s;
 }
 
 input:focus {
-    border-color: var(--azul);
-
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+    border-color: #2563eb;
+    box-shadow: 0 0 4px rgba(37, 99, 235, 0.3);
 }
 
-/* BOTON */
+
+/* =================================
+   MENSAJES DE ERROR
+================================= */
+
+.mensaje-error {
+    display: block;
+    color: #dc2626;
+    font-size: 13px;
+    font-style: italic;
+
+    margin-top: -10px;
+    margin-bottom: 12px;
+
+    min-height: 16px;
+}
+
+
+/* =================================
+   BOTONES
+================================= */
 
 button {
     width: 100%;
+    padding: 12px;
 
-    padding: 14px;
-
-    margin-top: 12px;
-
-    background: var(--rojo);
+    margin-top: 10px;
 
     border: none;
+    border-radius: 6px;
 
-    border-radius: 8px;
-
+    background-color: #1e40af;
     color: white;
 
-    font-size: 16px;
-
+    font-size: 15px;
     font-weight: bold;
 
     cursor: pointer;
-
-    transition:
-        background 0.3s,
-        transform 0.2s,
-        box-shadow 0.3s;
+    transition: background-color 0.3s;
 }
 
 button:hover {
-    background: var(--rojo-hover);
-
-    box-shadow: 0 5px 20px rgba(220, 38, 38, 0.3);
-
-    transform: translateY(-2px);
+    background-color: #1d4ed8;
 }
 
-button:active {
-    transform: scale(0.98);
+
+/* BOTON LIMPIAR */
+
+button:last-of-type {
+    background-color: #64748b;
 }
 
-button:focus-visible {
-    outline: 3px solid var(--amarillo);
-    outline-offset: 3px;
+button:last-of-type:hover {
+    background-color: #475569;
 }
 
-/* RESULTADOS */
 
-p {
-    display: flex;
+/* =================================
+   RESULTADOS
+================================= */
 
-    justify-content: space-between;
-
-    gap: 12px;
-
-    padding: 12px;
-
-    margin-bottom: 9px;
-
-    background: var(--negro);
-
-    border-radius: 7px;
-
-    border-left: 3px solid var(--azul);
-
-    color: var(--texto-secundario);
-
-    font-size: 14px;
-
-    flex-wrap: wrap;
+.contenedor p {
+    font-size: 15px;
+    padding: 5px 0;
 }
 
-p span {
-    color: var(--texto);
-
+.contenedor p span {
     font-weight: bold;
-
-    overflow-wrap: anywhere;
+    color: #15803d;
 }
 
-/* TOTAL */
 
-p:last-child {
-    border-left-color: var(--amarillo);
-
-    background: rgba(250, 204, 21, 0.08);
-
-    color: var(--amarillo);
-
-    font-weight: bold;
-}
-
-p:last-child span {
-    color: var(--amarillo);
-}
-
-/* =====================================
-   RESPONSIVE DESIGN
-   ===================================== */
-
-/* TABLETS */
-
-@media (max-width: 768px) {
-
-    body {
-        padding: 25px 16px;
-    }
-
-    .contenedor {
-        max-width: 420px;
-    }
-
-}
-
-/* TELEFONOS */
+/* =================================
+   DISEÑO RESPONSIVE
+================================= */
 
 @media (max-width: 480px) {
 
     body {
-        padding: 18px 12px;
-        align-items: flex-start;
+        padding: 15px;
     }
 
     .contenedor {
-        padding: 22px 18px;
-
-        border-radius: 13px;
+        padding: 20px;
+        margin: 15px auto;
     }
 
     h1 {
-        font-size: 24px;
-        margin-bottom: 25px;
+        font-size: 23px;
     }
 
-    h2 {
-        font-size: 18px;
-    }
-
-    input {
-        padding: 12px;
-        font-size: 16px;
-    }
-
-    button {
-        padding: 13px;
-    }
-
-    p {
-        font-size: 13px;
-    }
-
-}
-
-/* TELEFONOS PEQUEÑOS */
-
-@media (max-width: 320px) {
-
-    .contenedor {
-        padding: 18px 13px;
-    }
-
-    h1 {
-        font-size: 21px;
-    }
-
-    .mensaje-error {
-    display: block;
-    color: red;
-    font-style: italic;
-    font-size: 13px;
-    margin-top: 4px;
-    margin-bottom: 8px;
-}
 }
