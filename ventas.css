@@ -329,4 +329,12 @@ p:last-child span {
         font-size: 21px;
     }
 
+    .mensaje-error {
+    display: block;
+    color: red;
+    font-style: italic;
+    font-size: 13px;
+    margin-top: 4px;
+    margin-bottom: 8px;
+}
 }

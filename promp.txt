@@ -4,3 +4,6 @@ actua como un disenador grafico ,
    no toques los id , 
    no uses librerias externas como bootstraps 
    y lo principal que hagas un sistema responsive 
+
+
+

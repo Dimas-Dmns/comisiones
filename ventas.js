@@ -24,11 +24,49 @@ function validarVentas(){
     else true;
 }
 
+function validarInput(idInput, idMensaje) {
+
+    let input = document.getElementById(idInput);
+    let mensaje = document.getElementById(idMensaje);
+
+    let valor = input.value.trim();
+
+    // Validar que no esté vacío
+    if (valor === "") {
+        mensaje.textContent = "Este campo no puede estar vacío";
+        return false;
+    }
+
+    // Validar que solamente tenga números
+    if (!/^[0-9]+$/.test(valor)) {
+        mensaje.textContent = "Solo se permiten números";
+        return false;
+    }
+
+    // Validar máximo 5 dígitos
+    if (valor.length > 5) {
+        mensaje.textContent = "Máximo 5 dígitos permitidos";
+        return false;
+    }
+
+    // Si todo está correcto, limpiar mensaje
+    mensaje.textContent = "";
+
+    return true;
+}
+
 function calcular() {
 
-  if (validarVentas()==false){
-    return;
-  }
+    
+    let valido1 = validarInput("txtSueldoBase", "errorSueldoBase");
+    let valido2 = validarInput("txtVentas", "errorVentas");
+    let valido3 = validarInput("txtPrecio", "errorPrecio");
+
+    // Si algún campo tiene errores, detener el cálculo
+    if (!valido1 || !valido2 || !valido3) {
+        return;
+    }
+
 
     let sueldoBase = recuperarFloat("txtSueldoBase");
     let numeroVentas = recuperarFloat("txtVentas");
