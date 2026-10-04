@@ -15,7 +15,20 @@ function calcularComision(numeroVentas, precioProducto) {
     return comision;
 }
 
+function validarVentas(){
+      let numeroVentasStr = recuperarTexto("txtVentas")
+    if(numeroVentasStr.length > 5){
+        alert("Maximo 5 caracteres")
+        return false;
+    }
+    else true;
+}
+
 function calcular() {
+
+  if (validarVentas()==false){
+    return;
+  }
 
     let sueldoBase = recuperarFloat("txtSueldoBase");
     let numeroVentas = recuperarFloat("txtVentas");
